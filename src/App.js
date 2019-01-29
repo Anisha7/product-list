@@ -45,6 +45,7 @@ class App extends Component {
 
         <ul className = "categoryList">
           {this.getCategories()}
+          <button onClick = {() => this.setState({ currCategory:null })}>Display All</button>
         </ul>
 
         <div className = "inventory">

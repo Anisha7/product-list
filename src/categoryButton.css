@@ -11,3 +11,7 @@ button {
     color: white;
     border-radius: 15px;
 }
+
+button:hover{background-color:orange;}
+
+button:focus{background-color:rgb(45, 50, 174);}
