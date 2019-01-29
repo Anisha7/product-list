@@ -54,7 +54,6 @@ class App extends Component {
       <div className="App">
         <h1 className = "title">PRODULIST</h1>
         <p> Total: ${this.getPrice().toFixed(2)}</p>
-        <p> Number of Products: {this.getCount()}</p>
         <ul className = "categoryList">
           {this.getCategories()}
           <button onClick = {() => this.setState({ currCategory:null })}>Display All</button>
