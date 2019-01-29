@@ -38,11 +38,22 @@ class App extends Component {
       })
   }
 
+  getPrice() {
+    return inventory.filter((item) => {
+      console.log(item)
+      // console.log(this.state.currCategory)
+      return item.category === this.state.currCategory || this.state.currCategory === null
+    }).map(({price}) => {
+      console.log(price)
+      return parseFloat(price)
+    }).reduce((acc, val) => (acc + val))
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className = "title">PRODULIST</h1>
-
+        <p> Total: ${this.getPrice().toFixed(2)}</p>
         <ul className = "categoryList">
           {this.getCategories()}
           <button onClick = {() => this.setState({ currCategory:null })}>Display All</button>
