@@ -1,0 +1,19 @@
+.item {
+    border: 1px solid #e59244;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 10px;
+}
+
+.item h2 {
+    color: darkred;
+    float: right;
+    padding: 10px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.item h1, .item h2 {
+    display: inline;
+}

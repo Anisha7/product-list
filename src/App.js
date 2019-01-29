@@ -41,13 +41,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Show products here</h1>
+        <h1>SHOW PRODUCTS HERE</h1>
 
         <ul className = "categoryList">
           {this.getCategories()}
         </ul>
 
-        <div>
+        <div className = "inventory">
           {this.getInventory()}
         </div>
 

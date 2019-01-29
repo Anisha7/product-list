@@ -1,6 +1,22 @@
+.App {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 40px;
+}
+
+.App h1 {
+    color: #934801;
+}
+
 .categoryList {
     text-decoration: none;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
+}
+
+.inventory {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
