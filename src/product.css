@@ -1,9 +1,12 @@
 .item {
-    border: 1px solid #e59244;
+    /* border: 1px solid #e59244; */
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 10px;
+    background-color:#fff7ea;
+    box-shadow: 5px 10px #e8d9c2;
+    
 }
 
 .item h2 {
@@ -16,4 +19,9 @@
 
 .item h1, .item h2 {
     display: inline;
+}
+
+.item .description {
+    font-size: 20px;
+
 }

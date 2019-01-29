@@ -7,7 +7,8 @@ class Product extends Component {
         <div key={this.props.id} className = "item">
             <h1>{this.props.name}</h1>
             <h2>${this.props.price}</h2>
-            <p>{this.props.category}</p>
+            <p>Category: {this.props.category}</p>
+            <p className = "description">{this.props.description}</p>
         </div>
     )
   }

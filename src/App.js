@@ -31,9 +31,9 @@ class App extends Component {
         console.log(item)
         // console.log(this.state.currCategory)
         return item.category === this.state.currCategory || this.state.currCategory === null
-      }).map(({id, name, price, category}) => {
+      }).map(({id, name, price, category, description}) => {
           return (
-            <Product id = {id} name = {name} price = {price} category = {category}/>
+            <Product id = {id} name = {name} price = {price} category = {category} description = {description} />
           )
       })
   }
@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SHOW PRODUCTS HERE</h1>
+        <h1 className = "title">PRODULIST</h1>
 
         <ul className = "categoryList">
           {this.getCategories()}
