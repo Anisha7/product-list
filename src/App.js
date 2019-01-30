@@ -18,7 +18,13 @@ class App extends Component {
   getCategories() {
     return categories.map((cat) => {
       return (<li key={cat}>
-        <CategoryButton label={cat} onClick={() => this.setState({ currCategory:cat })} />
+        <CategoryButton className='catbutton' label={cat} onClick={(e) => {
+              this.setState({ currCategory:cat})
+              // change all other categoryButton styles
+              e.target.style.backgroundColor = 'rgb(45, 50, 174)'
+            }
+          } 
+        />
       </li>)
     })
   }
@@ -28,8 +34,6 @@ class App extends Component {
   // item = {id, name, price}, properties of item
   getInventory() {
     return inventory.filter((item) => {
-        console.log(item)
-        // console.log(this.state.currCategory)
         return item.category === this.state.currCategory || this.state.currCategory === null
       }).map(({id, name, price, category, description}) => {
           return (
@@ -40,11 +44,9 @@ class App extends Component {
 
   getPrice() {
     return inventory.filter((item) => {
-      console.log(item)
       // console.log(this.state.currCategory)
       return item.category === this.state.currCategory || this.state.currCategory === null
     }).map(({price}) => {
-      console.log(price)
       return parseFloat(price)
     }).reduce((acc, val) => (acc + val))
   }
