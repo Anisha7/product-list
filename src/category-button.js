@@ -3,7 +3,7 @@ import './categoryButton.css';
 
 class CategoryButton extends Component {
   render() {
-    return <button onClick = {this.props.onClick}>{this.props.label}</button>
+    return <button style={this.props.style} onClick = {this.props.onClick}>{this.props.label}</button>
   }
 }
 

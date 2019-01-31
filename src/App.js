@@ -11,17 +11,23 @@ class App extends Component {
     this.state = {
       currCategory : null
     }
+
+    // [{name:"Toys", selected: false}]
+
   }
+
   // calls map on category array (of strings)
   // map returns an array, takes a function as parameter
   // the parameter function transforms each item
   getCategories() {
-    return categories.map((cat) => {
+    return categories.map((cat, i) => {
+      let color = '#e59244'
+      if (this.state.currCategory === cat) {
+        color = 'rgb(45, 50, 174)'
+      }
       return (<li key={cat}>
-        <CategoryButton className='catbutton' label={cat} onClick={(e) => {
-              this.setState({ currCategory:cat})
-              // change all other categoryButton styles
-              e.target.style.backgroundColor = 'rgb(45, 50, 174)'
+        <CategoryButton label={cat} style={{backgroundColor: color}} onClick={(e) => {
+              this.setState({ currCategory:cat })
             }
           } 
         />
@@ -52,13 +58,19 @@ class App extends Component {
   }
 
   render() {
+    let color = '#e59244'
+    if (this.state.currCategory === null) {
+      color = 'rgb(45, 50, 174)'
+    }
     return (
       <div className="App">
         <h1 className = "title">PRODULIST</h1>
         <p> Total: ${this.getPrice().toFixed(2)}</p>
         <ul className = "categoryList">
           {this.getCategories()}
-          <button onClick = {() => this.setState({ currCategory:null })}>Display All</button>
+          <button style={{backgroundColor: color}} onClick = {(e) => {
+              this.setState({ currCategory:null })
+            }}>Display All</button>
         </ul>
 
         <div className = "inventory">

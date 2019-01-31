@@ -14,4 +14,4 @@ button {
 
 button:hover{background-color:orange;}
 
-button:focus{background-color:rgb(45, 50, 174);}
+/* button:focus{background-color:rgb(45, 50, 174);} */
